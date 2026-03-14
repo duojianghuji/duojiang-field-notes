@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import EntryCard from '../../components/EntryCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entries = (await getCollection('notes'))
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<SiteLayout
+	title="Notes | Duojiang Field Notes"
+	description="Short reflections that connect travel, micro photography, and reading."
+>
+	<section class="surface-card section-hero">
+		<p class="eyebrow">Notes</p>
+		<h1>Short pieces with room to breathe</h1>
+		<p class="lede">
+			Notes are the connective tissue of the site. They are useful for thoughts that are too small for a
+			full essay but still worth keeping in public view.
+		</p>
+	</section>
+
+	<section class="section-block">
+		<div class="entry-grid">
+			{
+				entries.map((entry) => (
+					<EntryCard
+						href={`/notes/${entry.id}/`}
+						title={entry.data.title}
+						description={entry.data.description}
+						pubDate={entry.data.pubDate}
+						tags={entry.data.tags}
+						eyebrow="Notes"
+					/>
+				))
+			}
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.section-hero {
+		padding: 1.75rem;
+		border-radius: 34px;
+	}
+
+	.section-block {
+		margin-top: 2.5rem;
+	}
+</style>

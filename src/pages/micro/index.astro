@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import EntryCard from '../../components/EntryCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entries = (await getCollection('micro'))
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<SiteLayout
+	title="Micro | Duojiang Field Notes"
+	description="Micro photography, textures, patterns, and notes on scale."
+>
+	<section class="surface-card section-hero">
+		<p class="eyebrow">Micro</p>
+		<h1>Small worlds, large attention</h1>
+		<p class="lede">
+			Micro photography rewards patience and repeated looking. This section is where close-up image series
+			can live beside short notes about pattern, texture, and scale.
+		</p>
+	</section>
+
+	<section class="section-block">
+		<div class="entry-grid">
+			{
+				entries.map((entry) => (
+					<EntryCard
+						href={`/micro/${entry.id}/`}
+						title={entry.data.title}
+						description={entry.data.description}
+						pubDate={entry.data.pubDate}
+						tags={entry.data.tags}
+						eyebrow="Micro"
+					/>
+				))
+			}
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.section-hero {
+		padding: 1.75rem;
+		border-radius: 34px;
+	}
+
+	.section-block {
+		margin-top: 2.5rem;
+	}
+</style>

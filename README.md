@@ -1,62 +1,24 @@
-# Astro Starter Kit: Blog
+# Duojiang Field Notes
 
-```sh
-npm create astro@latest -- --template blog
-```
+This Astro project is configured for static deployment on Cloudflare Pages.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Local editing
 
-Features:
+- Add or edit entries in `src/content/travel`, `src/content/micro`, `src/content/reading`, and `src/content/notes`.
+- Update the page copy in `src/pages` if you want to change the site structure.
+- Run `npm run dev` for local editing.
+- Run `npm run build` before pushing.
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
+## Cloudflare Pages deployment
 
-## 🚀 Project Structure
+1. Put this project in its own GitHub repository.
+2. In Cloudflare Pages, create a new project from that repository.
+3. Use `npm run build` as the build command.
+4. Use `dist` as the build output directory.
+5. Set `NODE_VERSION` to `22.17.1` in the Cloudflare Pages environment settings.
+6. Optionally set `SITE_URL` to your final production URL so the sitemap and RSS feed use the correct domain.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Before publishing publicly
 
-```text
-├── public/
-├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+- Replace the starter entries with your own travel notes, photo series, and reading notes.
+- Point the production domain at the project in Cloudflare Pages.

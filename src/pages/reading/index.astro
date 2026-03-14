@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import EntryCard from '../../components/EntryCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entries = (await getCollection('reading'))
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<SiteLayout
+	title="Reading | Duojiang Field Notes"
+	description="A reading trail for books, essays, references, and notes worth revisiting."
+>
+	<section class="surface-card section-hero">
+		<p class="eyebrow">Reading</p>
+		<h1>A reading trail instead of a checklist</h1>
+		<p class="lede">
+			This section is for books and essays that stay in motion after the final page: field guides,
+			travel writing, photography books, science writing, and small references that sharpen observation.
+		</p>
+	</section>
+
+	<section class="detail-grid shelf-grid">
+		<div class="meta-card">
+			<h3>Currently reading</h3>
+			<p>Add one or two live titles here when you want the site to feel present-tense.</p>
+		</div>
+		<div class="meta-card">
+			<h3>Reading notes</h3>
+			<p>Short entries work well: what stayed with you, what image lingers, what question opened.</p>
+		</div>
+		<div class="meta-card">
+			<h3>Bookshelf logic</h3>
+			<p>Curate for resonance, not completion. The section should reflect taste, not total volume.</p>
+		</div>
+	</section>
+
+	<section class="section-block">
+		<div class="entry-grid">
+			{
+				entries.map((entry) => (
+					<EntryCard
+						href={`/reading/${entry.id}/`}
+						title={entry.data.title}
+						description={entry.data.description}
+						pubDate={entry.data.pubDate}
+						tags={entry.data.tags}
+						eyebrow="Reading"
+					/>
+				))
+			}
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.section-hero {
+		padding: 1.75rem;
+		border-radius: 34px;
+	}
+
+	.shelf-grid {
+		margin-top: 2rem;
+	}
+
+	.section-block {
+		margin-top: 2.5rem;
+	}
+</style>

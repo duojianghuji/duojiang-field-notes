@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import EntryCard from '../../components/EntryCard.astro';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+
+const entries = (await getCollection('travel'))
+	.filter((entry) => !entry.data.draft)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<SiteLayout
+	title="Travel | Duojiang Field Notes"
+	description="Travel notes, place-based entries, and visual field notes."
+>
+	<section class="surface-card section-hero">
+		<p class="eyebrow">Travel</p>
+		<h1>Travel as a way of paying attention</h1>
+		<p class="lede">
+			This section is for place-based writing: itineraries, fragments, small observations, and image sets
+			that are best anchored to a specific location.
+		</p>
+	</section>
+
+	<section class="section-block">
+		<div class="entry-grid">
+			{
+				entries.map((entry) => (
+					<EntryCard
+						href={`/travel/${entry.id}/`}
+						title={entry.data.title}
+						description={entry.data.description}
+						pubDate={entry.data.pubDate}
+						tags={entry.data.tags}
+						eyebrow="Travel"
+					/>
+				))
+			}
+		</div>
+	</section>
+</SiteLayout>
+
+<style>
+	.section-hero {
+		padding: 1.75rem;
+		border-radius: 34px;
+	}
+
+	.section-block {
+		margin-top: 2.5rem;
+	}
+</style>

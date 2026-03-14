@@ -1,0 +1,63 @@
+---
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	href: string;
+	title: string;
+	description: string;
+	pubDate: Date;
+	tags?: string[];
+	eyebrow: string;
+}
+
+const { href, title, description, pubDate, tags = [], eyebrow } = Astro.props;
+---
+
+<a class="entry-card" href={href}>
+	<p class="eyebrow">{eyebrow}</p>
+	<h3>{title}</h3>
+	<p class="card-copy">{description}</p>
+	<div class="card-meta">
+		<FormattedDate date={pubDate} />
+		{
+			tags.length > 0 && (
+				<p class="tag-line">{tags.join(' · ')}</p>
+			)
+		}
+	</div>
+</a>
+
+<style>
+	.entry-card {
+		display: grid;
+		gap: 0.65rem;
+		padding: 1.25rem;
+		border: 1px solid rgba(var(--line), 0.7);
+		border-radius: 26px;
+		background: rgba(var(--surface), 0.82);
+		box-shadow: var(--shadow);
+		text-decoration: none;
+	}
+
+	.entry-card h3 {
+		margin: 0;
+	}
+
+	.card-copy {
+		margin: 0;
+		color: rgb(var(--muted));
+	}
+
+	.card-meta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.5rem 0.9rem;
+		color: rgb(var(--muted));
+		font-size: 0.95rem;
+	}
+
+	.tag-line {
+		margin: 0;
+	}
+</style>
