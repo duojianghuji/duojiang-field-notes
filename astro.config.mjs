@@ -7,9 +7,9 @@ import { defineConfig } from 'astro/config';
 const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
 const site = process.env.SITE_URL ??
 	(isGitHubPages
-		? 'https://duojianghuji.github.io/improved-octo-telegram/'
+		? 'https://duojianghuji.github.io/duojiang-field-notes/'
 		: 'https://fieldnotes.example.com');
-const base = process.env.BASE_PATH ?? (isGitHubPages ? '/improved-octo-telegram' : '/');
+const base = process.env.BASE_PATH ?? (isGitHubPages ? '/duojiang-field-notes' : '/');
 
 export default defineConfig({
 	site,
