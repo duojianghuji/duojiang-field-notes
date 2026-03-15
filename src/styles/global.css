@@ -1,14 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Ubuntu+Mono:wght@400;700&display=swap");
+
 :root {
-	--bg: 249, 240, 226;
-	--surface: 255, 252, 246;
-	--surface-strong: 247, 235, 218;
-	--ink: 28, 31, 39;
-	--muted: 95, 94, 96;
-	--line: 200, 185, 164;
-	--accent: 138, 63, 36;
-	--accent-strong: 111, 41, 22;
-	--sage: 84, 112, 101;
-	--shadow: 0 20px 50px rgba(28, 31, 39, 0.08);
+	--bg: 255, 255, 255;
+	--surface: 255, 255, 255;
+	--surface-muted: 245, 248, 250;
+	--ink: 44, 62, 80;
+	--muted: 95, 111, 126;
+	--line: 219, 227, 233;
+	--accent: 24, 188, 156;
+	--accent-strong: 18, 143, 118;
+	--nav: 44, 62, 80;
 }
 
 html {
@@ -18,32 +19,17 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	background:
-		radial-gradient(circle at top left, rgba(var(--accent), 0.18), transparent 24%),
-		radial-gradient(circle at top right, rgba(var(--sage), 0.14), transparent 28%),
-		linear-gradient(180deg, rgba(var(--surface), 1) 0%, rgba(var(--bg), 1) 100%);
+	background: rgb(var(--bg));
 	color: rgb(var(--ink));
-	font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
-	font-size: 19px;
-	line-height: 1.75;
-}
-
-body::before {
-	content: "";
-	position: fixed;
-	inset: 0;
-	z-index: -1;
-	background-image:
-		linear-gradient(rgba(var(--line), 0.08) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(var(--line), 0.08) 1px, transparent 1px);
-	background-size: 72px 72px;
-	mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), transparent 78%);
+	font-family: "Ubuntu", "Trebuchet MS", sans-serif;
+	font-size: 18px;
+	line-height: 1.72;
 }
 
 main {
 	width: min(1120px, calc(100% - 2rem));
 	margin: 0 auto;
-	padding: 2rem 0 0;
+	padding: 2.25rem 0 0;
 }
 
 h1,
@@ -54,27 +40,32 @@ h5,
 h6 {
 	margin: 0 0 0.75rem;
 	color: rgb(var(--ink));
-	font-family: "Avenir Next Condensed", "Arial Narrow", "Trebuchet MS", sans-serif;
-	line-height: 1.02;
+	font-family: "Ubuntu", "Trebuchet MS", sans-serif;
+	font-weight: 700;
+	line-height: 1.08;
 	letter-spacing: -0.03em;
 }
 
 h1 {
-	font-size: clamp(3rem, 8vw, 6.2rem);
+	font-size: clamp(2.75rem, 6vw, 4.4rem);
 }
 
 h2 {
-	font-size: clamp(2rem, 4vw, 3.3rem);
+	font-size: clamp(1.95rem, 4vw, 3rem);
 }
 
 h3 {
-	font-size: clamp(1.3rem, 3vw, 1.9rem);
+	font-size: clamp(1.25rem, 3vw, 1.75rem);
 }
 
 a {
-	color: rgb(var(--accent-strong));
+	color: rgb(var(--accent));
 	text-decoration-color: rgba(var(--accent), 0.45);
 	text-underline-offset: 0.18em;
+}
+
+a:hover {
+	color: rgb(var(--accent-strong));
 }
 
 p {
@@ -84,20 +75,24 @@ p {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 18px;
+	border: 1px solid rgba(var(--line), 0.9);
+	border-radius: 0.4rem;
+	background: rgb(var(--surface));
 }
 
 code {
 	padding: 0.15rem 0.4rem;
-	background: rgba(var(--surface-strong), 0.95);
-	border-radius: 6px;
+	background: rgba(var(--surface-muted), 0.95);
+	border-radius: 0.25rem;
+	font-family: "Ubuntu Mono", Menlo, monospace;
 }
 
 pre {
-	padding: 1.3em;
-	border-radius: 16px;
-	background: rgba(var(--ink), 0.96);
+	padding: 1.2em;
+	border-radius: 0.4rem;
+	background: rgba(var(--ink), 0.98);
 	color: rgb(var(--surface));
+	font-family: "Ubuntu Mono", Menlo, monospace;
 }
 
 pre > code {
@@ -107,30 +102,29 @@ pre > code {
 
 blockquote {
 	margin: 2rem 0;
-	padding: 0.3rem 0 0.3rem 1.2rem;
-	border-left: 4px solid rgba(var(--accent), 0.7);
+	padding: 0.25rem 0 0.25rem 1.1rem;
+	border-left: 4px solid rgba(var(--accent), 0.8);
 	color: rgb(var(--muted));
 }
 
 hr {
 	border: none;
-	border-top: 1px solid rgba(var(--line), 0.6);
+	border-top: 1px solid rgba(var(--line), 0.8);
 	margin: 2rem 0;
 }
 
 .eyebrow {
 	margin: 0 0 0.7rem;
-	font-family: "Avenir Next Condensed", "Arial Narrow", "Trebuchet MS", sans-serif;
-	font-size: 0.8rem;
+	font-size: 0.78rem;
 	font-weight: 700;
-	letter-spacing: 0.16em;
+	letter-spacing: 0.14em;
 	text-transform: uppercase;
 	color: rgb(var(--accent));
 }
 
 .lede {
-	max-width: 42rem;
-	font-size: 1.15rem;
+	max-width: 46rem;
+	font-size: 1.08rem;
 	color: rgb(var(--muted));
 }
 
@@ -161,19 +155,24 @@ hr {
 .surface-card,
 .section-tile,
 .meta-card {
-	border: 1px solid rgba(var(--line), 0.7);
-	border-radius: 28px;
-	background: rgba(var(--surface), 0.78);
-	box-shadow: var(--shadow);
+	border: 1px solid rgba(var(--line), 0.9);
+	border-radius: 0.45rem;
+	background: rgb(var(--surface));
+	box-shadow: none;
 }
 
 .section-tile,
 .meta-card {
-	padding: 1.25rem;
+	padding: 1.2rem;
 }
 
 .section-tile {
 	text-decoration: none;
+	transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.section-tile:hover {
+	border-color: rgba(var(--accent), 0.65);
 }
 
 .section-tile h3,
@@ -187,11 +186,12 @@ hr {
 }
 
 .prose {
-	max-width: 44rem;
+	max-width: 46rem;
 }
 
 .prose p:first-child {
-	font-size: 1.12rem;
+	font-size: 1.06rem;
+	color: rgb(var(--muted));
 }
 
 .prose ul,
@@ -215,9 +215,14 @@ hr {
 	border: 0;
 }
 
+:focus-visible {
+	outline: 2px solid rgba(var(--accent), 0.9);
+	outline-offset: 2px;
+}
+
 @media (max-width: 720px) {
 	body {
-		font-size: 18px;
+		font-size: 17px;
 	}
 
 	main {

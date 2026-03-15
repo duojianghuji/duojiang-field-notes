@@ -32,11 +32,15 @@ const { href, title, description, pubDate, tags = [], eyebrow } = Astro.props;
 		display: grid;
 		gap: 0.65rem;
 		padding: 1.25rem;
-		border: 1px solid rgba(var(--line), 0.7);
-		border-radius: 26px;
-		background: rgba(var(--surface), 0.82);
-		box-shadow: var(--shadow);
+		border: 1px solid rgba(var(--line), 0.9);
+		border-radius: 0.45rem;
+		background: rgb(var(--surface));
 		text-decoration: none;
+		transition: border-color 0.18s ease, color 0.18s ease;
+	}
+
+	.entry-card:hover {
+		border-color: rgba(var(--accent), 0.65);
 	}
 
 	.entry-card h3 {

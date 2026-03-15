@@ -4,6 +4,8 @@ import EntryCard from '../components/EntryCard.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import SiteLayout from '../layouts/SiteLayout.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const sortEntries = (entries) =>
 	entries
 		.filter((entry) => !entry.data.draft)
@@ -56,19 +58,19 @@ const recentEntries = [
 		<p class="eyebrow">Browse</p>
 		<h2>Four ways into the site</h2>
 		<div class="section-grid">
-			<a class="section-tile" href="/travel/">
+			<a class="section-tile" href={`${base}/travel/`}>
 				<h3>Travel</h3>
 				<p>Place-based journal entries, short itineraries, and visual notes from movement.</p>
 			</a>
-			<a class="section-tile" href="/micro/">
+			<a class="section-tile" href={`${base}/micro/`}>
 				<h3>Micro</h3>
 				<p>Close-looking work: tiny textures, patterns, surfaces, and the language of scale.</p>
 			</a>
-			<a class="section-tile" href="/reading/">
+			<a class="section-tile" href={`${base}/reading/`}>
 				<h3>Reading</h3>
 				<p>A curated reading trail for books, essays, and references that sharpen observation.</p>
 			</a>
-			<a class="section-tile" href="/notes/">
+			<a class="section-tile" href={`${base}/notes/`}>
 				<h3>Notes</h3>
 				<p>Short pieces that connect travel, images, reading, and everyday attention.</p>
 			</a>
@@ -86,7 +88,7 @@ const recentEntries = [
 			{
 				recentEntries.map((entry) => (
 					<EntryCard
-						href={`/${entry.collection}/${entry.id}/`}
+						href={`${base}/${entry.collection}/${entry.id}/`}
 						title={entry.data.title}
 						description={entry.data.description}
 						pubDate={entry.data.pubDate}
@@ -104,8 +106,8 @@ const recentEntries = [
 		display: grid;
 		grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.9fr);
 		gap: 1.5rem;
-		padding: 2rem;
-		border-radius: 36px;
+		padding: 1.75rem;
+		border-radius: 0.45rem;
 	}
 
 	.hero-aside {

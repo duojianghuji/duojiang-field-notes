@@ -1,18 +1,23 @@
 ---
-title: "Building a reading trail"
-description: "Why a reading section works better as a curated trail than as a complete ledger."
+title: "Books for paying attention"
+description: "A working collection of reading that sharpens observation—from field guides to essays about how we see the world."
 pubDate: 2026-03-12
 tags:
   - reading
-  - books
-  - curation
+  - science
+  - observation
+  - travel
 featured: true
 ---
 
-The goal of a reading section is not completeness. It is pattern.
+The best books are the ones that make you look at ordinary things differently.
 
-A useful reading trail shows what kinds of books, essays, and references keep returning to your desk or backpack. It can hold field guides, science writing, travel essays, photography books, memoir, or the occasional strange reference that changes the way you notice surfaces and places.
+*The Hidden Life of Deer*, by Elizabeth Marshall Thomas, changes how you read a woodland. You begin to see the trails they use, the reason they pause at certain edges, the deliberateness in what seems random.
 
-Short notes are enough. A sentence on what stayed with you is often more valuable than a long summary. Over time, that kind of record becomes a map of taste rather than a list of finished titles.
+*Braiding Sweetgrass*, by Robin Wall Kimmerer, stays on the desk for different reasons each season. A plant ecophysiologist reading it alongside a poet. The gratitude framework feels impossible and necessary at the same time.
 
-This page is also a good place to keep thematic shelves. For example: books that sharpen observation, books for traveling slowly, or books that change how scale feels.
+*Ways of Seeing*, the book from the Berger series, reminds you that perception is taught, not innate. Every time you think you're looking clearly, he shows you what you've been trained to skip.
+
+For the small observations: *The Art of Noticing*, by Rob Walker, collects strategies for attention. A field guide isn't a field guide anymore when someone teaches you to see the space between leaves as carefully as the leaves themselves.
+
+And there's a whole shelf of field guides that work better as meditation than reference. *Peterson Field Guide to the Birds of Eastern and Central North America* opened randomly is as useful as read cover-to-cover. Sometimes you just need to sit with one page and notice the small differences between two species you've never distinguished.

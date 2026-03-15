@@ -1,23 +1,18 @@
 ---
-title: "Starting the travel journal"
-description: "A simple structure for place-based entries that stays lightweight enough to update regularly."
+title: "First morning in the rain"
+description: "Arriving in a city means learning to see its drainage systems, its weather patterns, and how strangers move through wet streets."
 pubDate: 2026-03-14
 tags:
-  - structure
-  - travel
-  - journal
+  - city
+  - rain
+  - arrival
 featured: true
 ---
 
-This section works best when each entry is anchored to a place and a few precise details.
+The thing about arriving in a new city is that you first learn its water. Not the rivers or lakes—those come later—but the everyday rain and how it moves through streets that were designed by people who understood weather differently than you do.
 
-Instead of trying to document an entire trip at once, it is usually better to keep each page small. One neighborhood walk, one train ride, one morning market, or one sequence of weather can carry enough texture for a strong entry. The site stays alive when posts feel finishable.
+This morning, walking from the train station, every curb had a story. Water running wrong direction. A corner where the pavement dips too low and collects in a dark mirror. The way the city's eaves direct rain into pedestrian paths rather than away from them.
 
-A good travel note can be built from four parts:
+Locals don't think about this. They step over the puddle without looking. But if you've arrived from somewhere drier, you notice which surfaces are designed for water and which surfaces just tolerate it. The difference is legible in how people move.
 
-1. A place and a date.
-2. A short paragraph on what made the place memorable.
-3. A few photographs or visual fragments.
-4. One detail that stayed with you after leaving.
-
-That last part matters. It keeps the writing from becoming itinerary-only. Travel becomes more interesting when it records how a place altered your attention.
+By afternoon the rain had stopped and I was studying the leaf arrangement on a plant growing from a street-level grate. Three days in and I'll probably stop seeing water the way I see it now. That's why the first arrival matters—it captures the city exactly as unfamiliar.

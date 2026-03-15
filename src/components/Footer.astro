@@ -6,7 +6,7 @@ const today = new Date();
 	<div>
 		<p class="footer-mark">Duojiang Field Notes</p>
 		<p class="footer-copy">
-			Travel, micro photography, reading, and small observations.
+			Travel, micro photography, reading, and small observations. <a href="https://duojianghuji.github.io/duojiang-research-page/">See research site</a>.
 		</p>
 	</div>
 	<p class="footer-year">&copy; {today.getFullYear()} Duojiang.</p>
@@ -19,16 +19,16 @@ const today = new Date();
 		justify-content: space-between;
 		gap: 1rem;
 		margin-top: 4rem;
-		padding: 0 1.5rem 2.5rem;
+		padding: 1.5rem 1.5rem 2.5rem;
+		border-top: 1px solid rgba(var(--line), 0.9);
 		color: rgb(var(--muted));
 	}
 
 	.footer-mark {
 		margin: 0 0 0.2rem;
-		font-family: "Avenir Next Condensed", "Arial Narrow", "Trebuchet MS", sans-serif;
-		font-size: 0.95rem;
+		font-size: 0.88rem;
 		font-weight: 700;
-		letter-spacing: 0.08em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: rgb(var(--ink));
 	}
@@ -40,7 +40,7 @@ const today = new Date();
 
 	@media (max-width: 720px) {
 		footer {
-			padding: 0 0.9rem 2rem;
+			padding: 1.25rem 0.9rem 2rem;
 		}
 	}
 </style>

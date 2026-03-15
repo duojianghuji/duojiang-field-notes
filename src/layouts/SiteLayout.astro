@@ -17,9 +17,10 @@ const { title, description } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 	<body>
+		<a class="sr-only" href="#main-content" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:999;" onfocus="this.style.position='fixed';this.style.left='1rem';this.style.top='1rem';this.style.width='auto';this.style.height='auto';this.style.overflow='visible';" onblur="this.style.position='absolute';this.style.left='-9999px';">Skip to content</a>
 		<div class="shell">
 			<Header />
-			<main>
+			<main id="main-content">
 				<slot />
 			</main>
 			<Footer />

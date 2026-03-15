@@ -5,6 +5,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 export async function GET(context) {
 	const sectionNames = ['travel', 'micro', 'reading', 'notes'];
 	const collections = await Promise.all(sectionNames.map((name) => getCollection(name)));
+	const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 	const items = collections
 		.flat()
 		.filter((entry) => !entry.data.draft)
@@ -13,7 +14,7 @@ export async function GET(context) {
 			title: entry.data.title,
 			description: entry.data.description,
 			pubDate: entry.data.pubDate,
-			link: `/${entry.collection}/${entry.id}/`,
+			link: `${base}/${entry.collection}/${entry.id}/`,
 		}));
 
 	return rss({

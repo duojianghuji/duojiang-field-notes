@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import EntryCard from '../../components/EntryCard.astro';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const entries = (await getCollection('notes'))
 	.filter((entry) => !entry.data.draft)
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
@@ -26,7 +27,7 @@ const entries = (await getCollection('notes'))
 			{
 				entries.map((entry) => (
 					<EntryCard
-						href={`/notes/${entry.id}/`}
+						href={`${base}/notes/${entry.id}/`}
 						title={entry.data.title}
 						description={entry.data.description}
 						pubDate={entry.data.pubDate}
@@ -42,7 +43,7 @@ const entries = (await getCollection('notes'))
 <style>
 	.section-hero {
 		padding: 1.75rem;
-		border-radius: 34px;
+		border-radius: 0.45rem;
 	}
 
 	.section-block {
